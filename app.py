@@ -3,9 +3,11 @@ import arrow
 from bottle import route, run, template, debug
 
 class Source:
-	def __init__(self, name, url):
+	def __init__(self, name, url, headline, story):
 		self.name = name
 		self.url = url
+		self.headline = headline
+		self.story = story
 
 
 
@@ -51,11 +53,11 @@ class News:
 		c.execute("SELECT id,title,date,category,story FROM news")
 		news_table = c.fetchall()
 		for story in news_table:
-			c.execute("SELECT id,source,url FROM sources WHERE id=?", [story[0]])
+			c.execute("SELECT id,source,url,headline,story FROM sources WHERE id=?", [story[0]])
 			story_sources = c.fetchall()
 			sources = []
 			for source in story_sources:
-				sources.append(Source(source[1],source[2]))
+				sources.append(Source(source[1],source[2],source[3],source[4]))
 			stories.append(Story(story[0],story[1],story[2],story[3],story[4],sources))
 		c.close()
 
@@ -68,12 +70,11 @@ class News:
 		c.execute("insert into news (title,date,category,story) values (?,?,?,?)", (title,date,story))
 		id = c.lastrowid
 		for source in sources:
-			c.execute("insert into sources (id,source,url) values (?,?,?)", (id,source.name,source.url))
+			c.execute("insert into sources (id,source,url,headline,story) values (?,?,?,?,?)", (id,source.name,source.url,source.headline,source.story))
 		db.commit()
 		c.close()
 		story_instance = Story(id, title, date, category, story, sources)
 		stories.append(story_instance)
-
 
 
 news_factory = News()

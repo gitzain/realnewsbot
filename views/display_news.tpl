@@ -3,7 +3,7 @@
 	%for story in news:
 	<div class="row notice notice-lg notice-{{story.get_category()}}">
 		<div class="col-sm-2">
-			<h4>{{story.get_friendly_date()}}</h4>
+			<h4 class="notice-{{story.get_category()}}">{{story.get_friendly_date()}}</h4>
 		</div>
 		<div class="col-sm-10">
 			<h1>{{story.get_title()}} <span class="label label-danger">Breaking</span></h1>
@@ -11,7 +11,7 @@
 		</div>
 		<div class="row nested">
 			<div class="col-sm-2 text-uppercase">
-				<h4 class="category sport"><span class="glyphicon glyphicon-globe"></span> <strong>{{story.get_category()}}</strong></h4>
+				<h4 class="notice-{{story.get_category()}}"> <strong>{{story.get_category()}}</strong></h4>
 			</div>
 			<div class="col-sm-10">
 				<div class="mobile-social-share btn-group text-uppercase">

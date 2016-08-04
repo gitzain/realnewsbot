@@ -195,40 +195,61 @@
 
 
 
-.notice-success {
-    border-color: #80D651;
+/* business category is orange */
+.notice-business {
+    border-color: #FF5722;
 }
-.notice-success>strong {
-    color: #80D651;
-}
-
-.notice-info {
-    border-color: #45ABCD;
-}
-.notice-info>strong {
-    color: #45ABCD;
+.notice-business>strong {
+    color: #FF5722;
 }
 
-.notice-warning {
+/* politics category is yellow */
+.notice-politics {
     border-color: #FEAF20;
 }
-.notice-warning>strong {
+.notice-politics>strong {
     color: #FEAF20;
 }
 
+/* entertainment category is pink */
+.notice-entertainment {
+    border-color: #F56991;
+}
+.notice-entertainment>strong {
+    color: #F56991;
+}
+
+/* environment category is green */
+.notice-environment {
+    border-color: #80D651;
+}
+.notice-environment>strong {
+    color: #80D651;
+}
+
+/* lifestyle category is violet */
+.notice-lifestyle {
+    border-color: #906090;
+}
+.notice-lifestyle>strong {
+    color: #906090;
+}
+
+/* science&tech category is blue */
+.notice-science {
+    border-color: #45ABCD;
+}
+.notice-science>strong {
+    color: #45ABCD;
+}
+
+/* sport category is red */
 .notice-sport {
     border-color: #d73814;
 }
 .notice-sport>strong {
     color: #d73814;
 }
-
-
-.category {
-    color: #d73814;
-}
-
-
 
 
 </style>

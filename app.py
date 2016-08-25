@@ -1,5 +1,4 @@
-import sqlite3
-import arrow
+import sqlite3, arrow, tldextract
 from bottle import route, run, template, debug
 
 class Source:
@@ -8,8 +7,6 @@ class Source:
 		self.url = url
 		self.headline = headline
 		self.story = story
-
-
 
 class Story:
 	def __init__(self, id, title, date, category, story, sources):
@@ -38,6 +35,9 @@ class Story:
 
 	def get_sources(self):
 		return self.sources
+
+	def add_source(self, source):
+		sources.append(source)
 
 
 

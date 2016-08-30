@@ -1,87 +1,31 @@
-import sqlite3, arrow, tldextract
 from bottle import route, run, template, debug
 
-class Source:
-	def __init__(self, name, url, headline, story):
-		self.name = name
-		self.url = url
-		self.headline = headline
-		self.story = story
-
-class Story:
-	def __init__(self, id, title, date, category, story, sources):
-		self.id = id
-		self.title = title
-		self.date = date
-		self.category = category
-		self.story = story
-		self.sources = sources
-
-	def get_title(self):
-		return self.title
-
-	def get_date(self):
-		return self.date
-
-	def get_friendly_date(self):
-		arrow_date = arrow.get(self.date, 'DD/MM/YY HH:mm:ss')
-		return arrow_date.humanize()
-
-	def get_category(self):
-		return self.category.lower()
-
-	def get_story(self):
-		return self.story
-
-	def get_sources(self):
-		return self.sources
-
-	def add_source(self, source):
-		sources.append(source)
+import sys
+sys.path.insert(0, 'controller/')
+from summarize import SummaryTool
+from source import Source
+from story import Story
+from reporter import Reporter
+from newsprocessor import NewsProcessor
+from news import News
 
 
+news = News()
 
-class News:
-	def __init__(self):
-		global stories
-		stories = []
-		self.load_stories()
+reporter = Reporter()
+sourcesss = reporter.get_sources()
 
-	def load_stories(self):
-		db = sqlite3.connect('news.db')
-		c = db.cursor()
-		c.execute("SELECT id,title,date,category,story FROM news")
-		news_table = c.fetchall()
-		for story in news_table:
-			c.execute("SELECT id,source,url,headline,story FROM sources WHERE id=?", [story[0]])
-			story_sources = c.fetchall()
-			sources = []
-			for source in story_sources:
-				sources.append(Source(source[1],source[2],source[3],source[4]))
-			stories.append(Story(story[0],story[1],story[2],story[3],story[4],sources))
-		c.close()
+news_processor = NewsProcessor()
+blah = news_processor.do_it(sourcesss)
 
-	def get_stories(self):
-		return stories
-
-	def add_story(self, title, date, category, story, sources):
-		db = sqlite3.connect('news.db')
-		c = db.cursor()
-		c.execute("insert into news (title,date,category,story) values (?,?,?,?)", (title,date,story))
-		id = c.lastrowid
-		for source in sources:
-			c.execute("insert into sources (id,source,url,headline,story) values (?,?,?,?,?)", (id,source.name,source.url,source.headline,source.story))
-		db.commit()
-		c.close()
-		story_instance = Story(id, title, date, category, story, sources)
-		stories.append(story_instance)
-
-
-news_factory = News()
+for story in blah:
+	print "just run"
+	news.add_story(story.get_title(),story.get_date(),story.get_category(),story.get_story(),story.get_sources())
 
 @route('/')
 def show_news():
-    output = template('header')+template('display_news', news=news_factory.get_stories())
+    output = template('header')+template('display_news', news=news.get_stories())
     return output
 
-run(host='0.0.0.0', port=8080, reloader=True, debug=True)
+#reloader=True, 
+run(host='0.0.0.0', port=8080, debug=True)

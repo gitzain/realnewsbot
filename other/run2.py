@@ -218,6 +218,8 @@ sources = reporter.get_sources()
 np = NewsProcessor()
 stories = np.do_it(sources)
 
+master_stories = []
+
 for story in stories:
 	print "we got a story"
 	print story

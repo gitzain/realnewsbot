@@ -126,8 +126,3 @@ def summarize(title, content):
     # print "Original Length %s" % (len(title) + len(content))
     # print "Summary Length %s" % len(summary)
     # print "Summary Ratio: %s" % (100 - (100 * (len(summary) / (len(title) + len(content)))))
-
-summarize("Deliberate attack", "Man sets himself alight, drives car into Sydney police station parking lot. Police bomb squad examine car after Sydney scare. Man claiming to have bomb rams car into police station.")
-
-summarize("", "Prince George's third birthday marked with release of photos. Celebrating Prince George's 3rd birthday.")
-

@@ -8,3 +8,9 @@ class Source:
 
 	def get_story(self):
 		return self.story
+
+	def check_source(self, url):
+		if url is url:
+			return True
+		else:
+			return False

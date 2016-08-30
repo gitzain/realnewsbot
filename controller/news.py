@@ -35,14 +35,14 @@ class News:
 		return self.stories
 
 	def add_story(self, title, date, category, story, sources):
-		#db = sqlite3.connect('news.db')
-		#c = db.cursor()
-		#c.execute("insert into news (title,date,category,story) values (?,?,?,?)", (title,date,category,story))
-		#id = c.lastrowid
-		#for source in sources:
-		#	c.execute("insert into sources (id,source,url,headline,story) values (?,?,?,?,?)", (id,source.name,source.url,source.headline,source.story))
-		#db.commit()
-		#c.close()
+		db = sqlite3.connect('model/news.db')
+		c = db.cursor()
+		c.execute("insert into news (title,date,category,story) values (?,?,?,?)", (title,date,category,story))
+		id = c.lastrowid
+		for source in sources:
+			c.execute("insert into sources (id,source,url,headline,story) values (?,?,?,?,?)", (id,source.name,source.url,source.headline,source.story))
+		db.commit()
+		c.close()
 
 		story_instance = Story()
 		story_instance.set_id(id)

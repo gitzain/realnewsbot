@@ -13,7 +13,7 @@ from news import News
 news = News()
 
 reporter = Reporter()
-sourcesss = reporter.get_sources()
+sourcesss = reporter.get_sources(news.get_stories())
 
 news_processor = NewsProcessor()
 blah = news_processor.do_it(sourcesss)

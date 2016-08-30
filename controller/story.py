@@ -87,3 +87,12 @@ class Story:
 
 	def is_breaking(self):
 		return False
+
+	def source_exists(self, url):
+		result = False
+
+		for source in self.sources:
+			if source.check_source(url):
+				result = True
+
+		return result

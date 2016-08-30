@@ -6,19 +6,15 @@ from summarize import SummaryTool
 from source import Source
 from story import Story
 from reporter import Reporter
-from newsprocessor import NewsProcessor
 from news import News
 
 
 news = News()
 
 reporter = Reporter()
-sourcesss = reporter.get_sources(news.get_stories())
+stories = reporter.get_stories(news.get_stories())
 
-news_processor = NewsProcessor()
-blah = news_processor.do_it(sourcesss)
-
-for story in blah:
+for story in stories:
 	print "just run"
 	news.add_story(story.get_title(),story.get_date(),story.get_category(),story.get_story(),story.get_sources())
 

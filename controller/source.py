@@ -10,7 +10,7 @@ class Source:
 		return self.story
 
 	def check_source(self, url):
-		if url is url:
+		if url is self.url:
 			return True
 		else:
 			return False

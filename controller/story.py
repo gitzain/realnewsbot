@@ -2,7 +2,7 @@ import sys, arrow, time, dateutil
 
 from uuid import uuid4
 
-sys.path.insert(0, 'controller/4_summarise/')
+sys.path.insert(0, 'controller/')
 from summarize import SummaryTool
 
 
@@ -57,8 +57,6 @@ class Story:
 			for source in self.sources:
 				added_story += source.get_story()
 
-			print "*****************************************************"
-			print "*****************************************************"
 			print "**********************original story*******************************"
 			print added_story
 
@@ -68,7 +66,7 @@ class Story:
 			sentences_dic = st.get_senteces_ranks(added_story)
 			# Build the summary with the sentences dictionary
 			summary = st.get_summary("", added_story, sentences_dic)
-			# Print the summary
+
 			print "**********************sumarised story*******************************"
 			print summary
 
@@ -93,6 +91,6 @@ class Story:
 
 		for source in self.sources:
 			if source.check_source(url):
-				result = True
+				return True
 
 		return result

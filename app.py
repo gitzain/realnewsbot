@@ -12,10 +12,9 @@ from news import News
 news = News()
 
 reporter = Reporter()
-stories = reporter.get_stories(news.get_stories())
+stories = reporter.get_stories(news)
 
 for story in stories:
-	print "just run"
 	news.add_story(story.get_title(),story.get_date(),story.get_category(),story.get_story(),story.get_sources())
 
 @route('/')

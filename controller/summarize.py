@@ -119,7 +119,7 @@ def summarize(title, content):
     summary = st.get_summary(title, content, sentences_dic)
 
     # Print the summary
-    print summary
+    # print summary
 
     # Print the ratio between the summary length and the original length
     # print ""

@@ -34,6 +34,13 @@ class News:
 	def get_stories(self):
 		return self.stories
 
+	def contains_url(self, url):
+		for story in self.stories:
+			if story.source_exists(url):
+				return True
+
+		return False
+
 	def add_story(self, title, date, category, story, sources):
 		db = sqlite3.connect('model/news.db')
 		c = db.cursor()

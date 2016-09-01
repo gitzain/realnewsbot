@@ -24,48 +24,51 @@ sys.path.insert(0, '/')
 from source import Source
 from story import Story
 
-
-
-
-
-
 class Reporter:
 	def __init__(self):
 		self.feeds = [
-			'http://feeds.bbci.co.uk/news/rss.xml'
+			'http://feeds.bbci.co.uk/news/rss.xml',
+			'http://rss.cnn.com/rss/edition_world.rss',
+			'https://uk.news.yahoo.com/rss/world'
 			]
 
-	def get_sources(self, current_stories):
+	def get_sources(self, news):
+		feedparser._HTMLSanitizer.acceptable_elements.remove('img')
+		feedparser._HTMLSanitizer.acceptable_elements.remove('a')
+		feedparser._HTMLSanitizer.acceptable_elements.remove('p')
+		feedparser._HTMLSanitizer.acceptable_elements.remove('br')
+
 		# This bit of code gets links to the latest stories from the rrs feeds.
-		links = []
+		sources = []
 
 		for feed in self.feeds:
 			d = feedparser.parse(feed)
 			for e in d['entries']:
-				links.append(e['link'])
-				print e['link']
+				if len(e['description']) is not 0 and not news.contains_url(e['link']):
+					print "================================"
+					print e['link']
+					print e['title']
+					print e['description']
+
+					source = Source(e['link'],e['link'],e['title'],e['description'])
+					sources.append(source)
 
 		# This bit of code parses the links we just got and creates Source objects.
-		sources = []
+		#sources = []
 		
-		for url in links:
-			print "checking if the following exists" + url 
-			exists = False
-			for story in current_stories:
-				if story.source_exists(url):
-					exists = True
-					print url + " exists"
+		#for url in links:
+		#	exists = False
+		#	for story in current_stories:
+		#		if story.source_exists(url):
+		#			exists = True
 
-			if exists is not True:
-				article = Article(url)
-				article.download()
-				article.parse()
-				#print "********************"
-				#print url
-				#print article.text
-				domain_name = tldextract.extract(url).domain
-				source = Source(domain_name,url,article.title,article.text)
-				sources.append(source)
+		#	if exists is not True:
+		#		article = Article(url)
+		#		article.download()
+		#		article.parse()
+		#		domain_name = tldextract.extract(url).domain
+		#		source = Source(domain_name,url,article.title,article.text)
+		#		sources.append(source)
 
 		return sources
 

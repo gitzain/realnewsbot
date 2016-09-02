@@ -28,16 +28,10 @@ class Reporter:
 	def __init__(self):
 		self.feeds = [
 			'http://feeds.bbci.co.uk/news/rss.xml',
-			'http://rss.cnn.com/rss/edition_world.rss',
-			'https://uk.news.yahoo.com/rss/world'
+			'http://www.cnbc.com/id/100727362/device/rss/rss.html'
 			]
 
 	def get_sources(self, news):
-		feedparser._HTMLSanitizer.acceptable_elements.remove('img')
-		feedparser._HTMLSanitizer.acceptable_elements.remove('a')
-		feedparser._HTMLSanitizer.acceptable_elements.remove('p')
-		feedparser._HTMLSanitizer.acceptable_elements.remove('br')
-
 		# This bit of code gets links to the latest stories from the rrs feeds.
 		sources = []
 

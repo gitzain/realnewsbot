@@ -25,7 +25,7 @@ class News:
 			s.id = story[0]
 			s.title = story[1]
 			s.date = story[2]
-			s.category = "Sport"
+			s.category = story[3]
 			s.story = story[4]
 			s.sources = sources
 			self.stories.append(s)

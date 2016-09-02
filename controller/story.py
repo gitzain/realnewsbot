@@ -58,6 +58,8 @@ class Story:
 		if self.story is "":
 			added_story = ""
 			for source in self.sources:
+				print "********************************"
+				print source.get_story()
 				added_story += " " + source.get_story()
 
 			return self.get_summary(added_story)
@@ -92,6 +94,6 @@ class Story:
 
 		result = ""
 		for sentence in summary:
-			result += str(sentence)
+			result += " " + str(sentence)
 
 		return result

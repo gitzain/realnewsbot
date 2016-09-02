@@ -2,7 +2,6 @@ from bottle import route, run, template, debug
 
 import sys
 sys.path.insert(0, 'controller/')
-from summarize import SummaryTool
 from source import Source
 from story import Story
 from reporter import Reporter

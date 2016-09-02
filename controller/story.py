@@ -3,7 +3,11 @@ import sys, arrow, time, dateutil
 from uuid import uuid4
 
 sys.path.insert(0, 'controller/')
-from summarize import SummaryTool
+
+#Import library essentials
+from sumy.parsers.plaintext import PlaintextParser #We're choosing a plaintext parser here, other parsers available for HTML etc.
+from sumy.nlp.tokenizers import Tokenizer 
+from sumy.summarizers.lex_rank import LexRankSummarizer #We're choosing Lexrank, other algorithms are also built in
 
 
 class Story:
@@ -11,7 +15,7 @@ class Story:
 		self.id = uuid4()
 		self.title = ""
 		self.date = time.strftime("%d/%m/%y %H:%M:%S")
-		self.category = "Sport"
+		self.category = ""
 		self.story = ""
 		self.sources = []
 
@@ -53,24 +57,10 @@ class Story:
 	def get_story(self):
 		if self.story is "":
 			added_story = ""
-
 			for source in self.sources:
-				added_story += source.get_story()
+				added_story += " " + source.get_story()
 
-			print "**********************original story*******************************"
-			print added_story
-
-			# Create a SummaryTool object
-			st = SummaryTool()
-			# Build the sentences dictionary
-			sentences_dic = st.get_senteces_ranks(added_story)
-			# Build the summary with the sentences dictionary
-			summary = st.get_summary("", added_story, sentences_dic)
-
-			print "**********************sumarised story*******************************"
-			print summary
-
-			return summary
+			return self.get_summary(added_story)
 		else:
 			return self.story
 
@@ -92,5 +82,16 @@ class Story:
 		for source in self.sources:
 			if source.check_source(url):
 				return True
+
+		return result
+
+	def get_summary(self, text):
+		parser = PlaintextParser.from_string(text, Tokenizer("english"))
+		summarizer = LexRankSummarizer()
+		summary = summarizer(parser.document, 3) #Summarize the document with 5 sentences
+
+		result = ""
+		for sentence in summary:
+			result += str(sentence)
 
 		return result

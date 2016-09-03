@@ -12,29 +12,18 @@ import threading
 
 
 
-
 news = News()
 reporter = Reporter()
 
 
 
-def hello():
-	t = threading.Timer(10.0, hello)
+def keep_checking_new_stories():
+	t = threading.Timer(60.0, keep_checking_new_stories)
 	t.start()
-	get_latest_news_test()
+	get_latest_news()
 
-t = threading.Timer(10.0, hello)
+t = threading.Timer(60.0, keep_checking_new_stories)
 t.start() 
-
-def get_latest_news_test(story_number=0):
-	news.add_story("Threaded story " + str(story_number) ,time.strftime("%d/%m/%y %H:%M:%S"),"","random story text",[])
-	story_number += 1
-
-
-
-
-
-
 
 def get_latest_news():
 	stories = reporter.get_stories(news)

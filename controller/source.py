@@ -1,6 +1,8 @@
+import tldextract
+
 class Source:
 	def __init__(self, name, url, headline, story):
-		self.name = name
+		self.name = tldextract.extract(url).domain
 		self.url = url
 		self.headline = headline
 		self.story = story

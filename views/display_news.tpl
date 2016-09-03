@@ -18,7 +18,7 @@
 				<h4 class="notice-{{story.get_category()}}"> <strong>{{story.get_category()}}</strong></h4>
 			</div>
 			<div class="col-sm-10">
-				<div class="mobile-social-share btn-group text-uppercase">
+				<!-- <div class="mobile-social-share btn-group text-uppercase">
 					<a data-toggle="dropdown" class="btn btn-success">
 					<i class="fa fa-share-alt fa-inverse"></i>
 					Share</a>
@@ -57,8 +57,8 @@
 							</a>
 						</li>
 					</ul>
-				</div>
-				<div class="btn-group pull-right">
+				</div>-->
+				<div class="btn-group">
 					<button class="btn btn-success btn-circle text-uppercase dropdown-toggle pull-right" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#" id="reply"><span class="glyphicon glyphicon-globe"></span> Sources</button>
 					<ul class="dropdown-menu">
 						%for source in story.get_sources():

@@ -1,5 +1,6 @@
-import newspaper, logging, tldextract
-from newspaper import Article
+import logging, tldextract
+#import newspaper
+#from newspaper import Article
 import feedparser
 
 import sys

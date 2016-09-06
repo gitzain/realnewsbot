@@ -1,3 +1,6 @@
+import matplotlib
+matplotlib.use('Agg')
+
 import logging, tldextract
 #import newspaper
 #from newspaper import Article
@@ -139,6 +142,8 @@ class Reporter:
 
 
 		def do_it(self, sources):
+			matplotlib.use('Agg')
+
 			for source in sources:
 				words = nltk.wordpunct_tokenize(source.headline)
 				words.extend(nltk.wordpunct_tokenize(source.summary))
@@ -174,7 +179,6 @@ class Reporter:
 
 			Z = linkage(mat, 'single')
 
-			matplotlib.use('Agg')
 			dendrogram(Z, color_threshold=self.t)
 
 

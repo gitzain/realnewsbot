@@ -25,6 +25,8 @@ sys.path.insert(0, '/')
 from source import Source
 from story import Story
 
+import matplotlib
+
 class Reporter:
 	def __init__(self):
 		self.feeds = [
@@ -172,6 +174,7 @@ class Reporter:
 
 			Z = linkage(mat, 'single')
 
+			matplotlib.use('Agg')
 			dendrogram(Z, color_threshold=self.t)
 
 

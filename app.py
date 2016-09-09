@@ -23,7 +23,7 @@ def keep_checking_new_stories():
 	get_latest_news()
 
 t = threading.Timer(60.0, keep_checking_new_stories)
-#t.start() 
+t.start() 
 
 def get_latest_news():
 	stories = reporter.get_stories(news)

@@ -40,4 +40,4 @@ def show_news():
     return output
 
 #reloader=True, 
-run(host='0.0.0.0', port=8080, debug=True)
+run(host='0.0.0.0', port=8081, debug=True)

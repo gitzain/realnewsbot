@@ -1,7 +1,7 @@
 <div class="container">
 	<br>
 	%for story in news:
-	<div class="row notice notice-lg notice-{{story.get_category()}}">
+	<div class="row notice notice-{{story.get_category()}}">
 		<div class="col-sm-2">
 			<h4 class="notice-{{story.get_category()}}">{{story.get_friendly_date()}}</h4>
 		</div>

@@ -44,14 +44,14 @@ class Reporter:
 		for feed in self.feeds:
 			d = feedparser.parse(feed)
 			for e in d['entries']:
+				#print "************************************"
+				#print e['link']
 				if len(e['description']) is not 0 and not news.contains_url(e['link']):
-					print "================================"
-					print e['link']
-					print e['title']
-					print e['description']
-
+					#print "DIDNT FIND IT"
 					source = Source(e['link'],e['link'],e['title'],e['description'])
 					sources.append(source)
+
+		return sources
 
 		# This bit of code parses the links we just got and creates Source objects.
 		#sources = []
@@ -69,8 +69,6 @@ class Reporter:
 		#		domain_name = tldextract.extract(url).domain
 		#		source = Source(domain_name,url,article.title,article.text)
 		#		sources.append(source)
-
-		return sources
 
 	def get_stories(self, current_stories):
 		news_processor = self.NewsProcessor()
@@ -149,7 +147,7 @@ class Reporter:
 				words.extend(nltk.wordpunct_tokenize(source.summary))
 				lowerwords=[x.lower() for x in words if len(x) > 1]
 				self.ct += 1
-				print self.ct, "TITLE",source.headline
+				#print self.ct, "TITLE",source.headline
 				self.corpus.append(lowerwords)
 				self.titles.append(source.headline)
 				self.links.append(source.url)
@@ -160,7 +158,7 @@ class Reporter:
 			self.ct=-1
 			for doc in self.corpus:
 			   self.ct+=1
-			   print self.ct,"KEYWORDS"," ".join(self.top_keywords(self.nkeywords,doc,self.corpus))
+			   #print self.ct,"KEYWORDS"," ".join(self.top_keywords(self.nkeywords,doc,self.corpus))
 
 
 			for document in self.corpus:
@@ -187,11 +185,11 @@ class Reporter:
 			stories = []
 
 			for key in clusters:
-				print "============================================="
+				#print "============================================="
 				story = Story()  
 				for id in clusters[key]:
 					story.add_source(sources[id])
-					print id,self.titles[id],sources[id].url
+					#print id,self.titles[id],sources[id].url
 				stories.append(story)
 
 

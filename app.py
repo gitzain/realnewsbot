@@ -29,6 +29,7 @@ def get_latest_news():
 	stories = reporter.get_stories(news)
 
 	for story in stories:
+		print story.get_title()
 		news.add_story(story.get_title(),story.get_date(),story.get_category(),story.get_story(),story.get_sources())
 
 get_latest_news()

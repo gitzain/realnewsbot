@@ -1,16 +1,41 @@
+<!-- Navigation -->
 <div class="container">
-	<br>
+	<div class="row">
+		<nav class="navbar navbar-default" role="navigation">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">News</a>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a href="/">Today</a></li>
+					<li><a href="/all">All</a></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</nav>
+	</div>
+</div>
+<!-- Page Content -->
+<div class="container">
 	%for story in news:
 	<div class="row notice notice-{{story.get_category()}}">
 		<div class="col-sm-2">
 			<h4 class="notice-{{story.get_category()}}">{{story.get_friendly_date()}}</h4>
 		</div>
 		<div class="col-sm-10">
-			<h1>{{story.get_title()}}
-			%if story.is_breaking() is True: 
+			<h2>{{story.get_title()}}
+				%if story.is_breaking() is True: 
 				<span class="label label-danger">Breaking</span>
-			%end
-			</h1>
+				%end
+			</h2>
 			<p>{{story.get_story()}}</p>
 		</div>
 		<div class="row nested">
@@ -57,7 +82,7 @@
 							</a>
 						</li>
 					</ul>
-				</div>-->
+					</div>-->
 				<div class="btn-group">
 					<button class="btn btn-success btn-circle text-uppercase dropdown-toggle pull-right" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#" id="reply"><span class="glyphicon glyphicon-globe"></span> Sources</button>
 					<ul class="dropdown-menu">
@@ -75,4 +100,9 @@
 	$(document).ready(function(){
 	    $(".dropdown-toggle").dropdown();
 	});
+	
+	// Sets active link in Bootstrap menu
+	// Add this code in a central place used\shared by all pages
+	// like your _Layout.cshtml in ASP.NET MVC for example
+	$('a[href="' + this.location.pathname + '"]').parents('li,ul').addClass('active');
 </script>

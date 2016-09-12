@@ -35,10 +35,18 @@ def get_latest_news():
 get_latest_news()
 
 
+
 @route('/')
+def show_news():
+    output = template('header')+template('display_news', news=news.get_today_stories())
+    return output
+
+@route('/all')
 def show_news():
     output = template('header')+template('display_news', news=news.get_stories())
     return output
 
+
+
 #reloader=True, 
-run(host='0.0.0.0', port=8081, debug=True)
+run(host='0.0.0.0', port=8080, debug=True)

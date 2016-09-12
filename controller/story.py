@@ -11,19 +11,24 @@ from sumy.summarizers.lex_rank import LexRankSummarizer #We're choosing Lexrank,
 
 
 class Story:
+	global unique_id 
+	unique_id = 0
+
 	def __init__(self):
-		self.id = uuid4()
+		global unique_id
+		self.story_id = unique_id
+		unique_id += 1
 		self.title = ""
 		self.date = time.strftime("%d/%m/%y %H:%M:%S")
 		self.category = ""
 		self.story = ""
 		self.sources = []
 
-	def get_id(self):
-		return self.id
+	def get_unique_id(self):
+		return self.story_id
 
-	def set_id(self, id):
-		self.id = id
+	def set_unique_id(self, story_id):
+		self.story_id = story_id
 
 	def get_title(self):
 		try:

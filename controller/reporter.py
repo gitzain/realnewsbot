@@ -33,7 +33,7 @@ import matplotlib
 class Reporter:
 	def __init__(self):
 		self.feeds = [
-			'http://feeds.bbci.co.uk/news/rss.xml',
+			'http://feeds.bbci.co.uk/news/world/rss.xml?edition=uk',		
 			'http://www.cnbc.com/id/100727362/device/rss/rss.html'
 			]
 

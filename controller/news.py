@@ -28,7 +28,7 @@ class News:
 			for source in story_sources:
 				s.add_source(Source(source[1],source[2],source[3],source[4]))
 
-			self.stories.insert(1, s)
+			self.stories.insert(0, s)
 
 		c.close()
 
@@ -39,11 +39,8 @@ class News:
 		filtered_sorted_stories = []
 
 		for story in self.stories:
-			print story.get_date()
-			print datetime.today().date()
-			
 			if datetime.strptime(story.get_date(), "%d/%m/%y %H:%M:%S").date() == datetime.today().date():
-				filtered_sorted_stories.insert(1, story)
+				filtered_sorted_stories.append(story)
 
 		return filtered_sorted_stories
 
@@ -70,4 +67,4 @@ class News:
 		story_instance.set_story(story)
 		for source in sources:
 			story_instance.add_source(source)
-		self.stories.insert(1, story_instance)
+		self.stories.insert(0, story_instance)

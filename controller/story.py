@@ -1,7 +1,7 @@
 import sys, arrow, time, dateutil
 
 from uuid import uuid4
-
+from datetime import datetime
 sys.path.insert(0, 'controller/')
 
 #Import library essentials
@@ -79,6 +79,10 @@ class Story:
 		self.sources.append(source)
 
 	def is_breaking(self):
+		if datetime.strptime(self.get_date(), "%d/%m/%y %H:%M:%S").date() == datetime.today().date():
+			if (int(datetime.today().hour) - int(datetime.strptime(self.get_date(), "%d/%m/%y %H:%M:%S").hour)) <= 1:
+				return True
+
 		return False
 
 	def source_exists(self, url):

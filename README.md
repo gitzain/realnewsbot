@@ -1,5 +1,5 @@
 # project-x
-Robots don't lie nor are they affected by the biases, they simply do as they are programmed. This project aims to produce an automated news site. 
+Robots don't lie nor are they affected by bias, they simply do as they are programmed. This project aims to produce an automated news bot/site. 
 
 ## Table of content
 

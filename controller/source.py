@@ -8,6 +8,12 @@ class Source:
 		self.story = story
 		self.summary = story[:150]
 
+	def get_name(self):
+		return self.name
+
+	def set_name(self, name):
+		self.name = name
+
 	def get_story(self):
 		return self.story
 

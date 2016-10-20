@@ -1,6 +1,6 @@
 from bottle import route, run, template, debug,time
 
-import sys
+import sys, os
 sys.path.insert(0, 'controller/')
 from source import Source
 from story import Story
@@ -48,5 +48,7 @@ def show_news():
 
 
 
-#reloader=True, 
-run(host='0.0.0.0', port=8080, debug=True)
+#reloader=True,
+port = int(os.environ.get('PORT', 8080)) 
+run(host='0.0.0.0', port=port, debug=True)
+

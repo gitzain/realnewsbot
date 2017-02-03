@@ -20,6 +20,35 @@
     margin-right: 0;
     }
 
+
+
+
+
+@media (max-width: 480px) {
+    .container {
+      padding:0;
+      margin:0;
+    }
+
+    body {
+      padding:0;
+    }
+
+    .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom:0;
+    }
+
+    .row {
+    margin-left: 0;
+    margin-right: 0;
+    }
+}
+
+
+
+
     .mobile-social-share h3 {
     color: inherit;
     float: left;

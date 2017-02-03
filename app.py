@@ -1,13 +1,10 @@
-from bottle import route, run, template, debug,time
-
+from bottle import route, run, template, debug, time
 import sys, os
 sys.path.insert(0, 'controller/')
 from source import Source
 from story import Story
 from reporter import Reporter
 from news import News
-
-
 import threading
 
 
@@ -23,7 +20,7 @@ def keep_checking_new_stories():
 	get_latest_news()
 
 t = threading.Timer(60.0, keep_checking_new_stories)
-#t.start() 
+t.start() 
 
 def get_latest_news():
 	stories = reporter.get_stories(news)

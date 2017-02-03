@@ -27,22 +27,22 @@
 <div class="container">
 	%for story in news:
 	<div class="row notice notice-{{story.get_category()}}">
-		<div class="col-sm-2">
+		<div class="col-xs-2">
 			<h4 class="notice-{{story.get_category()}}">{{story.get_friendly_date()}}</h4>
 		</div>
-		<div class="col-sm-10">
-			<h2>{{story.get_title()}}
+		<div class="col-xs-10">
+			<h3>{{story.get_title()}}
 				%if story.is_breaking() is True: 
 				<span class="label label-danger">Breaking</span>
 				%end
-			</h2>
+			</h3>
 			<p>{{story.get_story()}}</p>
 		</div>
 		<div class="row nested">
-			<div class="col-sm-2 text-uppercase">
+			<div class="col-xs-2 text-uppercase">
 				<h4 class="notice-{{story.get_category()}}"> <strong>{{story.get_category()}}</strong></h4>
 			</div>
-			<div class="col-sm-10">
+			<div class="col-xs-10">
 				<!-- <div class="mobile-social-share btn-group text-uppercase">
 					<a data-toggle="dropdown" class="btn btn-success">
 					<i class="fa fa-share-alt fa-inverse"></i>

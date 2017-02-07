@@ -16,7 +16,7 @@ import math
 from operator import itemgetter
 import operator
 import numpy
-from hcluster import linkage, dendrogram
+from scipy.cluster.hierarchy import dendrogram, linkage
 import pylab
 
 import sys

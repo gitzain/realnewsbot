@@ -53,6 +53,7 @@ class News:
 
 	def add_story(self, title, date, category, story, sources):
 		db = sqlite3.connect('model/news.db')
+		db.text_factory = lambda x: unicode(x, "utf-8", "ignore")
 		c = db.cursor()
 		c.execute("insert into news (title,date,category,story) values (?,?,?,?)", (title,date,category,story))
 		id = c.lastrowid

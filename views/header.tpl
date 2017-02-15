@@ -6,214 +6,115 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<script type="text/javascript">
+    $('#iconified').on('keyup', function() {
+        var input = $(this);
+        if(input.val().length === 0) {
+            input.addClass('empty');
+        } else {
+            input.removeClass('empty');
+        }
+    });
+</script>
+
+
 <style>
-    .navbar {
-    border-radius: 0;
-    }
-
-    .row {
-    margin-left: 15px;
-    margin-right: 15px;
-    }
-    .row .nested {
-    margin-left: 0;
-    margin-right: 0;
-    }
-
-
-
-
-
-@media (max-width: 480px) {
-    .container {
-      padding:0;
-      margin:0;
-    }
-
+    /* modifications for navbar */
     body {
-      padding:0;
+        padding-top: 80px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
     }
 
-    .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
-      margin-left: 0;
-      margin-right: 0;
-      margin-bottom:0;
+    .navbar-default {
+        background-color: white;
     }
 
-    .row {
-    margin-left: 0;
-    margin-right: 0;
+    .navbar-fixed-top {
+        min-height: 80px;
     }
+
+        /* modifications for navbar divider */
+        .navbar .divider-vertical {
+            height: 50px;
+            margin: 15px 3px;
+            border-right: 1px solid #f2f2f2;
+            border-left: 1px solid #ffffff;
+        }
+
+        .navbar-inverse .divider-vertical {
+            border-right-color: #111111;
+            border-left-color: #222222;
+        }
+
+        @media (max-width: 767px) {
+            .navbar-collapse .nav > .divider-vertical {
+                display: none;
+             }
+        }
+
+        /* modifications for navbar nav links */
+        .navbar-form,
+        .navbar-nav > li > a {
+            padding-top: 0px;
+            padding-bottom: 0px;
+            line-height: 80px;
+            margin: 0px;
+        }
+
+        /* modifications for navbar form controls */
+        .form-control {
+            background-color:#f2f2f2;
+            outline: none;
+            border: none !important;
+            -webkit-box-shadow: none !important;
+            -moz-box-shadow: none !important;
+            box-shadow: none !important;
+        }
+
+        /* modifications for navbar search */
+        input.empty {
+            font-family: FontAwesome;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: inherit;
+
+        }
+
+        /* modifications for navbar site info button */
+        .btn-label { 
+            position: relative;
+            left: -12px;
+            display: inline-block;
+            padding: 6px 12px;
+            background: rgba(0,0,0,0.15);
+            border-radius: 3px 0 0 3px;
+        }
+
+        .btn-labeled {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .btn { 
+            margin-bottom:10px; 
+        }
+
+.story {
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
+h1,h2,h3,h4,h5,h6 {
+margin: 0;
+}
 
+.h1,.h2,.h3,.h4,.h5,.h6 {
+margin: 0;
+}
 
+.h3 {
+    margin: 10px 0;
+}
 
-    .mobile-social-share h3 {
-    color: inherit;
-    float: left;
-    font-size: 15px;
-    line-height: 20px;
-    margin: 25px 25px 0 25px;
-    }
-    .share-group {
-    float: right;
-    margin: 18px 25px 0 0;
-    }
-    .btn-group {
-    display: inline-block;
-    font-size: 0;
-    position: relative;
-    vertical-align: middle;
-    white-space: nowrap;
-    }
-    .mobile-social-share ul {
-    float: right;
-    list-style: none outside none;
-    margin: 0;
-    min-width: 61px;
-    padding: 0;
-    }
-    .share {
-    min-width: 17px;
-    }
-    .mobile-social-share li {
-    display: block;
-    font-size: 18px;
-    list-style: none outside none;
-    margin-bottom: 3px;
-    margin-left: 4px;
-    margin-top: 3px;
-    }
-    .btn-share {
-    background-color: #BEBEBE;
-    border-color: #CCCCCC;
-    color: #333333;
-    }
-    .btn-twitter {
-    background-color: #3399CC !important;
-    width: 51px;
-    color:#FFFFFF!important;
-    }
-    .btn-facebook {
-    background-color: #3D5B96 !important;
-    width: 51px;
-    color:#FFFFFF!important;
-    }
-    .btn-facebook {
-    background-color: #3D5B96 !important;
-    width: 51px;
-    color:#FFFFFF!important;
-    }
-    .btn-google {
-    background-color: #DD3F34 !important;
-    width: 51px;
-    color:#FFFFFF!important;
-    }
-    .btn-linkedin {
-    background-color: #1884BB !important;
-    width: 51px;
-    color:#FFFFFF!important;
-    }
-    .btn-pinterest {
-    background-color: #CC1E2D !important;
-    width: 51px;
-    color:#FFFFFF!important;
-    }
-    .btn-mail {
-    background-color: #FFC90E !important;
-    width: 51px;
-    color:#FFFFFF!important;
-    }
-    .caret {
-    border-left: 4px solid rgba(0, 0, 0, 0);
-    border-right: 4px solid rgba(0, 0, 0, 0);
-    border-top: 4px solid;
-    display: inline-block;
-    height: 0;
-    margin-left: 2px;
-    vertical-align: middle;
-    width: 0;
-    }
-    @media (max-width : 320px) {
-    .mobile-social-share h3 {
-    margin-left: 0;
-    margin-right: 0;
-    }
-    .mobile-social-share h3 {
-    font-size: 15px;
-    }
-    }
-    @media (max-width : 238px) {
-    .mobile-social-share h3 {
-    font-size: 12px;
-    }
-    }
-
-    .notice {
-    padding: 15px;
-    background-color: #fafafa;
-    border-left: 6px solid #7f7f84;
-    margin-bottom: 10px;
-    -webkit-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
-    -moz-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
-    box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
-    }
-    .notice-sm {
-    padding: 10px;
-    font-size: 80%;
-    }
-    .notice-lg {
-    padding: 35px;
-    font-size: large;
-    }
-    /* business category is orange */
-    .notice-business {
-    border-color: #FF5722;
-    }
-    .notice-business>strong {
-    color: #FF5722;
-    }
-    /* politics category is yellow */
-    .notice-politics {
-    border-color: #FEAF20;
-    }
-    .notice-politics>strong {
-    color: #FEAF20;
-    }
-    /* entertainment category is pink */
-    .notice-entertainment {
-    border-color: #F56991;
-    }
-    .notice-entertainment>strong {
-    color: #F56991;
-    }
-    /* environment category is green */
-    .notice-environment {
-    border-color: #80D651;
-    }
-    .notice-environment>strong {
-    color: #80D651;
-    }
-    /* lifestyle category is violet */
-    .notice-lifestyle {
-    border-color: #906090;
-    }
-    .notice-lifestyle>strong {
-    color: #906090;
-    }
-    /* science&tech category is blue */
-    .notice-science {
-    border-color: #45ABCD;
-    }
-    .notice-science>strong {
-    color: #45ABCD;
-    }
-    /* sport category is red */
-    .notice-sport {
-    border-color: #d73814;
-    }
-    .notice-sport>strong {
-    color: #d73814;
-    }
 </style>

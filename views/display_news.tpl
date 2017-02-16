@@ -1,14 +1,9 @@
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 	<div class="container">
+
 		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-			<span class="sr-only">Toggle navigation</span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			</button>
+		<div class="navbar-header pull-left">
 			<a class="navbar-brand" href="#">
 			<span class="fa-stack fa-lg">
 			<i class="fa fa-circle fa-stack-2x text-danger"></i>
@@ -17,27 +12,57 @@
 			</a>
 			<div class="divider-vertical"></div>
 		</div>
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<!--<ul class="nav navbar-nav">
-				<li><a href="/">Today</a></li>
-				<li><a href="/all">All</a></li>
-				</ul> -->
-			<div class="col-sm-3 col-md-3">
-				<form class="navbar-form" role="search">
+
+
+        <!-- 'Sticky' (non-collapsing) left-side menu item(s) -->
+        <div class="navbar-header pull-left">
+
+				<form class=" navbar-form" role="search">
 					<input type="text" class="form-control empty" id="iconified" placeholder="&#xF002;"/>
 				</form>
-			</div>
+		</div>
 
-			<form class="navbar-form pull-right">
+        <!-- 'Sticky' (non-collapsing) right-side menu item(s) -->
+        <div class="navbar-header pull-right">
+
+			<form class="navbar-form pull-left">
 				<a class="btn btn-success btn-labeled" href="#" role="button">
 				<span class="btn-label"><i class="glyphicon glyphicon-info-sign"></i></span>Site info</a>
 			</form>
+        
+
+		 <!-- Required bootstrap placeholder for the collapsed menu -->
+		<!--	<button type="button" class="navbar-toggle pull-right" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</button>-->
+
+		</div>
+
+
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse navbar-left">
+			<!--<ul class="nav navbar-nav navbar-right">
+				<li><a href="/">Today</a></li>
+				<li><a href="/all">All</a></li>
+				</ul> -->
+
+
+
+
 		</div>
 		<!-- /.navbar-collapse -->
+
+
 	</div>
 	<!-- /.container -->
 </nav>
+
+
+
 <!-- Page Content -->
 <div class="container">
 	%for story in news:

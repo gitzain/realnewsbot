@@ -48,18 +48,31 @@
         }
 
         @media (max-width: 767px) {
-            .navbar-collapse .nav > .divider-vertical {
-                display: none;
-             }
-        }
-
-        /* modifications for navbar nav links */
+        .search,
         .navbar-form,
         .navbar-nav > li > a {
             padding-top: 0px;
             padding-bottom: 0px;
             line-height: 80px;
             margin: 0px;
+            border:0;
+        }
+
+.form-control {
+    display: inline-block;
+}
+
+        }
+
+        /* modifications for navbar nav links */
+        .search,
+        .navbar-form,
+        .navbar-nav > li > a {
+            padding-top: 0px;
+            padding-bottom: 0px;
+            line-height: 80px;
+            margin: 0px;
+            border:0;
         }
 
         /* modifications for navbar form controls */
@@ -116,5 +129,13 @@ margin: 0;
 .h3 {
     margin: 10px 0;
 }
+
+
+.container>.navbar-header {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+
 
 </style>

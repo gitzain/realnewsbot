@@ -101,8 +101,12 @@
 		</div>
 		<div class="headline col-xs-12">
 			<h2 class="h3">{{story.get_title()}}</h2>
-			<!-- <p>{{story.get_story()}}</p>-->
 		</div>
+
+		<div class="story-text col-xs-12">
+			<div class="well"><p>{{story.get_story()}}</p></div>
+		</div>
+
 		<div class="metadata col-xs-12">
 			%if story.is_breaking() is True: 
 			<button class="btn btn-danger btn-xs" type="button"><strong>BREAKING</strong></button>

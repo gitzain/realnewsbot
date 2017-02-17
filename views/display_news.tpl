@@ -15,19 +15,20 @@
 
 
         <!-- 'Sticky' (non-collapsing) left-side menu item(s) -->
-        <div class="navbar-header pull-left">
+        <div class="collapse navbar-collapse navbar-header pull-left">
 
-				<form class=" navbar-form" role="search">
+				<form class="navbar-form" role="search">
 					<input type="text" class="form-control empty" id="iconified" placeholder="&#xF002;"/>
 				</form>
 		</div>
 
         <!-- 'Sticky' (non-collapsing) right-side menu item(s) -->
-        <div class="navbar-header pull-right">
+        <div class="collapse navbar-collapse navbar-header pull-right">
 
 			<form class="navbar-form pull-left">
-				<a class="btn btn-success btn-labeled" href="#" role="button">
-				<span class="btn-label"><i class="glyphicon glyphicon-info-sign"></i></span>Site info</a>
+				<a class="btn btn-success btn-labeled" href="#success" role="button" data-toggle="modal">
+					<span class="btn-label"><i class="glyphicon glyphicon-info-sign"></i></span>Site info
+				</a>
 			</form>
         
 
@@ -61,6 +62,34 @@
 	<!-- /.container -->
 </nav>
 
+
+ <!-- Modal -->
+    <div class="modal fade" id="success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal-header-about">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h1><i class="glyphicon glyphicon-info-sign"></i> Site info</h1>
+                </div>
+                <div class="modal-body">
+					<h2>Purpose</h2>
+					<p>Provide news that is important, impartial and accurate in an easy to digest format.</p>
+					<h2>How does the Real News Bot work</h2>					
+<p>The Real News Bot works like this</p>
+<ul>
+<li>1. Scour the internet for news stories from multiple, reliable sources</li>
+<li>2. Extract only verified facts and remove opinions <span class="label label-danger">Coming soon</span></li>
+<li>3. Sumarize the story</li>
+<li>4. Calculate importance of story based <span class="label label-danger">Coming soon</span></li>
+<li>5. Categorise and tag story <span class="label label-danger">Coming soon</span></li>
+</ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
 
 <!-- Page Content -->

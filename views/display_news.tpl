@@ -1,88 +1,66 @@
-<!-- Navigation -->
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container">
-
-		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header pull-left">
-			<a class="navbar-brand" href="#">
-			<span class="fa-stack fa-lg">
-			<i class="fa fa-circle fa-stack-2x text-danger"></i>
-			<i class="fa fa-android fa-stack-1x fa-inverse"></i>
-			</span>
-			</a>
-			<div class="divider-vertical"></div>
-		</div>
+<nav class="navbar navbar-inverse navbar-static-top upper">
+  <div class="container">
 
 
-        <!-- 'Sticky' (non-collapsing) left-side menu item(s) -->
-        <div class="collapse navbar-collapse navbar-header pull-left">
-
-				<form class="navbar-form" role="search">
-					<input type="text" class="form-control empty" id="iconified" placeholder="&#xF002;"/>
-				</form>
-		</div>
-
-        <!-- 'Sticky' (non-collapsing) right-side menu item(s) -->
-        <div class="collapse navbar-collapse navbar-header pull-right">
-
-			<form class="navbar-form pull-left">
-				<a class="btn btn-success btn-labeled" href="#success" role="button" data-toggle="modal">
-					<span class="btn-label"><i class="glyphicon glyphicon-info-sign"></i></span>Site info
-				</a>
-			</form>
-        
-
-		 <!-- Required bootstrap placeholder for the collapsed menu -->
-		<!--	<button type="button" class="navbar-toggle pull-right" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-			<span class="sr-only">Toggle navigation</span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			</button>-->
-
-		</div>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed left" data-toggle="collapse" data-target="#menu">
+        <span class="sr-only">RN</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><strong>Real News</strong></a>
+    </div>
 
 
-
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse navbar-left">
-			<!--<ul class="nav navbar-nav navbar-right">
-				<li><a href="/">Today</a></li>
-				<li><a href="/all">All</a></li>
-				</ul> -->
-
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Stories</a></li>
+        <li><a href="#info" data-toggle="modal">About</a></li>
+      </ul> 
+    </div><!-- /.navbar-collapse #menu -->
 
 
-
-		</div>
-		<!-- /.navbar-collapse -->
-
-
-	</div>
-	<!-- /.container -->
+  </div><!-- /.container -->
 </nav>
 
 
+
+<nav class="navbar navbar-default subnav">
+  <div class="container">
+
+
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Today</a></li>
+        <li><a href="/all">All</a></li>
+      </ul> 
+    </div><!-- /.navbar-collapse #menu -->
+
+
+  </div><!-- /.container -->
+</nav>
+
+
+
  <!-- Modal -->
-    <div class="modal fade" id="success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header modal-header-about">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h1><i class="glyphicon glyphicon-info-sign"></i> Site info</h1>
+                    <h1><i class="glyphicon glyphicon-info-sign"></i> About</h1>
                 </div>
                 <div class="modal-body">
-					<h2>Purpose</h2>
-					<p>Provide news that is important, impartial and accurate in an easy to digest format.</p>
-					<h2>How does the Real News Bot work</h2>					
-<p>The Real News Bot works like this</p>
-<ul>
-<li>1. Scour the internet for news stories from multiple, reliable sources</li>
-<li>2. Extract only verified facts and remove opinions <span class="label label-danger">Coming soon</span></li>
-<li>3. Sumarize the story</li>
-<li>4. Calculate importance of story based <span class="label label-danger">Coming soon</span></li>
-<li>5. Categorise and tag story <span class="label label-danger">Coming soon</span></li>
-</ul>
+					<p>Provide news that is important, impartial and accurate in an easy to digest format.</p>					
+                    <p>The Real News Bot works like this</p>
+                    <ul>
+                    <li>1. Scour the internet for news stories from multiple, reliable sources</li>
+                    <li>2. Extract only verified facts and remove opinions <span class="label label-danger">Coming soon</span></li>
+                    <li>3. Sumarize the story</li>
+                    <li>4. Calculate importance of story based <span class="label label-danger">Coming soon</span></li>
+                    <li>5. Categorise and tag story <span class="label label-danger">Coming soon</span></li>
+                    </ul>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
@@ -90,6 +68,7 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+
 
 
 <!-- Page Content -->

@@ -9,115 +9,12 @@
 
 
 <script type="text/javascript">
-    $('#iconified').on('keyup', function() {
-        var input = $(this);
-        if(input.val().length === 0) {
-            input.addClass('empty');
-        } else {
-            input.removeClass('empty');
-        }
-    });
+
 </script>
 
 
 <style>
-    /* modifications for navbar */
-    body {
-        padding-top: 80px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-    }
-
-    .navbar-default {
-        background-color: white;
-    }
-
-    .navbar-fixed-top {
-        min-height: 80px;
-    }
-
-        /* modifications for navbar divider */
-        .navbar .divider-vertical {
-            height: 50px;
-            margin: 15px 3px;
-            border-right: 1px solid #f2f2f2;
-            border-left: 1px solid #ffffff;
-        }
-
-        .navbar-inverse .divider-vertical {
-            border-right-color: #111111;
-            border-left-color: #222222;
-        }
-
-        @media (max-width: 767px) {
-        .search,
-        .navbar-form,
-        .navbar-nav > li > a {
-            padding-top: 0px;
-            padding-bottom: 0px;
-            line-height: 80px;
-            margin: 0px;
-            border:0;
-        }
-
-.form-control {
-    display: inline-block;
-}
-
-        }
-
-        /* modifications for navbar nav links */
-        .search,
-        .navbar-form,
-        .navbar-nav > li > a {
-            padding-top: 0px;
-            padding-bottom: 0px;
-            line-height: 80px;
-            margin: 0px;
-            border:0;
-        }
-
-        /* modifications for navbar form controls */
-        .form-control {
-            background-color:#f2f2f2;
-            outline: none;
-            border: none !important;
-            -webkit-box-shadow: none !important;
-            -moz-box-shadow: none !important;
-            box-shadow: none !important;
-        }
-
-        /* modifications for navbar search */
-        input.empty {
-            font-family: FontAwesome;
-            font-style: normal;
-            font-weight: normal;
-            text-decoration: inherit;
-
-        }
-
-        /* modifications for navbar site info button */
-        .btn-label { 
-            position: relative;
-            left: -12px;
-            display: inline-block;
-            padding: 6px 12px;
-            background: rgba(0,0,0,0.15);
-            border-radius: 3px 0 0 3px;
-        }
-
-        .btn-labeled {
-            padding-top: 0;
-            padding-bottom: 0;
-        }
-
-        .btn { 
-            margin-bottom:10px; 
-        }
-
-.story {
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
+/* Remove default margins from text */
 h1,h2,h3,h4,h5,h6 {
 margin: 0;
 }
@@ -131,20 +28,75 @@ margin: 0;
 }
 
 
-.modal-header-about {
-    color:#fff;
-    padding:9px 15px;
-    border-bottom:1px solid #eee;
-    background-color: #5cb85c;
-    -webkit-border-top-left-radius: 5px;
-    -webkit-border-top-right-radius: 5px;
-    -moz-border-radius-topleft: 5px;
-    -moz-border-radius-topright: 5px;
-     border-top-left-radius: 5px;
-     border-top-right-radius: 5px;
+
+/* Stuff to make the page fit more compact different screen sizes */
+@media (min-width: 768px) {
+    .container {
+        max-width: 650px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 700px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 800px;
+    }
+}
+
+
+
+/* Stuff to make main navbar 60px */
+.navbar-brand,
+.navbar-nav li a {
+    line-height: 60px;
+    height: 60px;
+    padding-top: 0;
+}
+
+.navbar-toggle {
+    margin-top: 13px;
+}
+
+
+
+/* Stuff to make the subnav bar */
+.subnav {
+  margin:0;
+  top: 0px;
+  z-index: 1020;
+  background-color: white; 
+  margin-top: -20px;
+}
+
+.subnav {
+    margin-left: -60px;
+}
+
+.subnav,
+.subnav li a {
+    line-height: 40px;
+    height: 40px;
+    padding-top: 0;
+}
+.subnav > li > a {padding-top:5px !important; padding-bottom:5px !important;}
+.subnav {min-height:40px !important}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    font-weight:bold;
+    background-color: transparent;
 }
 
 
 
 
+/* Stuff to style the story blocks */
+.story {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
 </style>

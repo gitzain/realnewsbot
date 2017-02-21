@@ -30,12 +30,21 @@
   <div class="container">
 
 
-    <div class="collapse navbar-collapse">
+    <div class="collapse navbar-collapse pull-left">
       <ul class="nav navbar-nav">
         <li><a href="/">Today</a></li>
         <li><a href="/all">All</a></li>
-      </ul> 
+      </ul>
     </div><!-- /.navbar-collapse #menu -->
+
+
+
+    <form class="hidden-lg hidden-md hidden-sm form-group pull-right">
+      <select id="subnavdrop" class="form-control" onchange="location = this.value;">
+        <option value="/#">Today</option>
+        <option value="/all">All</option>
+      </select>
+    </form>
 
 
   </div><!-- /.container -->
@@ -114,4 +123,8 @@
 	// Add this code in a central place used\shared by all pages
 	// like your _Layout.cshtml in ASP.NET MVC for example
 	$('a[href="' + this.location.pathname + '"]').parents('li,ul').addClass('active');
+
+    // This is for the subnav drop down to ensure it always shows the page we are on
+    $("#subnavdrop option[value='" + location.pathname + "']").prop('selected', true);
+
 </script>

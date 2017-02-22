@@ -70,7 +70,7 @@ margin: 0;
   top: 0px;
   z-index: 1020;
   background-color: white; 
-  margin-top: -20px;
+  margin-top: 60px;
 }
 
 @media (min-width: 768px) {
@@ -95,7 +95,9 @@ margin: 0;
 }
 
 
-
+body {
+margin-top: 70px;
+}
 
 
 

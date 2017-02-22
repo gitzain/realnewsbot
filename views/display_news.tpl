@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-static-top upper">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
 
 
@@ -26,7 +26,7 @@
 
 
 
-<nav class="navbar navbar-default subnav">
+<nav class="navbar navbar-default navbar-fixed-top subnav">
   <div class="container">
 
 

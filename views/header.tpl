@@ -73,8 +73,11 @@ margin: 0;
   margin-top: -20px;
 }
 
+@media (min-width: 768px) {
+
 .subnav {
     margin-left: -60px;
+}
 }
 
 .subnav,
@@ -90,6 +93,9 @@ margin: 0;
     font-weight:bold;
     background-color: transparent;
 }
+
+
+
 
 
 

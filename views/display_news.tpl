@@ -39,12 +39,15 @@
 
 
 
-    <form class="hidden-lg hidden-md hidden-sm form-group pull-right">
-      <select id="subnavdrop" class="form-control" onchange="location = this.value;">
-        <option value="/#">Today</option>
-        <option value="/all">All</option>
-      </select>
+    <form class="hidden-lg hidden-md hidden-sm">
+        <div class="form-group">
+          <select id="subnavdrop" class="form-control" onchange="location = this.value;">
+            <option value="/#">Today</option>
+            <option value="/all">All</option>
+          </select>
+        </div>
     </form>
+
 
 
   </div><!-- /.container -->

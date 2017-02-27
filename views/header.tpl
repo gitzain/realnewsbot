@@ -76,7 +76,7 @@ margin: 0;
 @media (min-width: 768px) {
 
 .subnav {
-    margin-left: -60px;
+    margin-left: -30px;
 }
 }
 
@@ -89,6 +89,10 @@ margin: 0;
 .subnav > li > a {padding-top:5px !important; padding-bottom:5px !important;}
 .subnav {min-height:40px !important}
 
+.hidden-subnav {
+    padding-top: 3px;
+}
+
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
     font-weight:bold;
     background-color: transparent;
@@ -96,7 +100,7 @@ margin: 0;
 
 
 body {
-margin-top: 70px;
+margin-top: 90px;
 }
 
 

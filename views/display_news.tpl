@@ -39,7 +39,7 @@
 
 
 
-    <form class="hidden-lg hidden-md hidden-sm">
+    <form class="hidden-lg hidden-md hidden-sm hidden-subnav">
         <div class="form-group">
           <select id="subnavdrop" class="form-control" onchange="location = this.value;">
             <option value="/#">Today</option>

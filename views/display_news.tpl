@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
 
@@ -102,7 +103,7 @@
 			%if story.is_breaking() is True: 
 			<button class="btn btn-danger btn-xs" type="button"><strong>BREAKING</strong></button>
 			%end
-			<!-- <button class="btn btn-info btn-xs" type="button"><strong>Politics</strong></button>-->
+			<button class="btn btn-info btn-xs" type="button"><strong>{{story.get_category()}}</strong></button>
 			<div class="btn-group btn-group-success ">
 				<button class="btn btn-success btn-xs" type="button"><strong>Sources</strong></button>
 				<button data-toggle="dropdown" class="btn btn-success btn-xs dropdown-toggle" type="button"><span class="caret"></span>

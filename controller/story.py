@@ -9,6 +9,10 @@ from sumy.parsers.plaintext import PlaintextParser #We're choosing a plaintext p
 from sumy.nlp.tokenizers import Tokenizer 
 from sumy.summarizers.lex_rank import LexRankSummarizer #We're choosing Lexrank, other algorithms are also built in
 
+#from summa import summarizer
+
+from textblob.classifiers import NaiveBayesClassifier
+
 
 class Story:
 	global unique_id 
@@ -54,7 +58,10 @@ class Story:
 		self.date = date
 
 	def get_category(self):
-		return self.category.lower()
+		with open('model/categories.json', 'r') as fp:
+			cl = NaiveBayesClassifier(fp, format="json")
+			self.category = cl.classify(self.story)
+		return self.category
 
 	def set_category(self, category):
 		self.category = category
@@ -102,5 +109,7 @@ class Story:
 		result = ""
 		for sentence in summary:
 			result += " " + str(sentence)
+
+		#summarizer.summarize(text, words=250, language="english")	
 
 		return result

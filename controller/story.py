@@ -24,7 +24,7 @@ class Story:
 		unique_id += 1
 		self.title = ""
 		self.date = time.strftime("%d/%m/%y %H:%M:%S")
-		self.category = ""
+		self.category = None
 		self.story = ""
 		self.sources = []
 
@@ -58,9 +58,13 @@ class Story:
 		self.date = date
 
 	def get_category(self):
+		if self.category is not None:
+			return self.category
+
 		with open('model/categories.json', 'r') as fp:
 			cl = NaiveBayesClassifier(fp, format="json")
 			self.category = cl.classify(self.story)
+
 		return self.category
 
 	def set_category(self, category):

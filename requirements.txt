@@ -10,7 +10,7 @@ functools32==3.2.3.post2
 idna==2.2
 lxml==3.7.2
 matplotlib==2.0.0
-nltk==3.2.2
+nltk==3.4.5
 numpy==1.12.0
 packaging==16.8
 pyparsing==2.1.10

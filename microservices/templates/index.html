@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>Real News Network</title>
+
+      <link rel="stylesheet" href="/static/css.css">
+      <link href="/static/site.css" rel="stylesheet" type="text/css">
+      
+      <script type="text/javascript"></script><!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif]--><script type="text/javascript"></script>
+      <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+      <link href="https://daks2k3a4ib2z.cloudfront.net/img/webclip.png" rel="apple-touch-icon">
+   </head>
+   <body>
+      <nav class="top-bar">
+         <div data-collapse="small" data-animation="default" data-duration="400" class="navbar w-nav">
+            <div class="w-container">
+               <div class="menu-button w-nav-button">
+                  <div class="w-icon-nav-menu"></div>
+               </div>
+               <a href="#" class="logo-link w-nav-brand">
+                  <div class="logo">RN</div>
+               </a>
+               <nav role="navigation" class="nav-menu w-nav-menu">
+                  <a href="#" class="nav-link w-nav-link" style="max-width: 940px;">News</a>
+                  <div data-hover="1" data-delay="0" class="w-dropdown" style="max-width: 940px;">
+                     <div class="dropdown-toggle w-dropdown-toggle"><img src="/static/5b027c4459e4c878c777618f_kabob.svg" class="nav-icon"></div>
+                     <nav class="dropdown-list w-dropdown-list"><a href="#" class="dropdown-link w-dropdown-link">About</a><a href="#" class="dropdown-link w-dropdown-link">Things</a><a href="#" class="dropdown-link w-dropdown-link">Gallery</a><a href="#" class="dropdown-link w-dropdown-link">Hall of Fame</a><a href="#" class="dropdown-link w-dropdown-link">Advertise</a><a href="#" class="dropdown-link w-dropdown-link">RSS Feed</a></nav>
+                  </div>
+               </nav>
+            </div>
+            <div class="w-nav-overlay" data-wf-ignore=""></div>
+         </div>
+         <div class="subnav-bar">
+            <div class="container w-container"><a href="#" class="subnav-link">Recent</a></div>
+         </div>
+      </nav>
+      <main class="main">
+
+         <div class="flex w-container">
+            <div class="feed">
+
+
+
+               <div class="flex v-align">
+                  <div class="intro">
+                     <h1><strong>Real News Network</strong>&nbsp;reporting news that matters.</h1>
+                     <div>The news stories on this website was collected and summarised by a robot. Robots don't lie nor are they affected by bias, they simply do as they are programmed. The code for this site is open source.</div>
+                  </div>
+               </div>
+
+
+
+               <div class="w-dyn-list">
+                  <div class="w-dyn-items">
+
+                    {% for n in s: %}
+                     <div class="w-dyn-item">
+                        <div class="story-item">
+                           <a href="#" class="story-category w-inline-block"></a>
+                           <div class="div-block">
+                              <a target="_blank" href="https://vimeo.com/" class="story-link">{{ n.headline }}</a>
+                              <p>{{ n.story }}</p>
+                              <div class="story-sublink-warapper">
+                                 <a href="#" class="story-sub-link w-inline-block">
+                                    <div class="number">{{ n.get_friendly_datetime() }}</div>
+      <!-- and the comment closes with <div class="text-block">hour(s) ago</div> --> 
+                                 </a>
+                                 <div class="bullet">reported by</div>
+                                  {% for source in n.sources: %}
+                                 <a href="{{ source.id }}" class="story-sub-link w-inline-block"><div class="text-block">{{ source.get_source_name() }}</div></a>,
+                                    {% endfor %}
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                    {% endfor %}
+
+
+
+
+
+                  </div>
+
+               </div>
+
+
+            </div> 
+
+
+
+            <div class="right-col"></div>
+         </div>
+
+
+      </main>
+      <footer class="footer">
+         <div class="w-container">
+            <div class="flex space-between">
+               <div class="footer-content">
+                  <div class="flex v-align no-padding">
+                     <div>
+                        <div class="bold">Real News Network</div>
+                        <div>News that matters.</div>
+                     </div>
+                  </div>
+                  <div class="footer-description">
+                     <p class="footer-p">© Copyright 2018 Real News Network</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <script type="text/javascript"></script><script type="text/javascript"></script><!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+   </body>
+</html>

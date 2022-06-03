@@ -1,6 +1,6 @@
 appdirs==1.4.0
 arrow==0.10.0
-bottle==0.12.13
+bottle==0.12.20
 breadability==0.1.20
 chardet==2.3.0
 cycler==0.10.0
